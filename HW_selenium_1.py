@@ -79,6 +79,11 @@ def test_2(driver):
     buttonSubmit = driver.find_element(By.XPATH , element_buttonSubmit)
     buttonSubmit.click()
 
+    name_user = driver.find_element(By.XPATH , "//font[@size= '2']").text
+    user_name = driver.find_element(By.XPATH , "//p[3]/font[@size='2']").text
 
     assert  driver.current_url == "https://demo.guru99.com/test/newtours/register_sucess.php"
+    assert "Stanislau Laptsionak" in name_user
+    assert "admin" in user_name
+
 
