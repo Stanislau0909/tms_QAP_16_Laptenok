@@ -6,16 +6,6 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
-
-@pytest.fixture
-def driver():
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-    driver.maximize_window()
-    yield driver
-    driver.close()
-    driver.quit()
-
-
 def test_1(driver):
     driver.get("http://thedemosite.co.uk/login.php")
     element_input_login = "//input[@name='username']"
