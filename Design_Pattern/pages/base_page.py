@@ -52,3 +52,6 @@ class BasePage:
             return element
         except TimeoutException:
             assert False, f'Element {locator} does not find'
+
+    # def kldsakd(self,locator,timeout=5):
+    #     return Wait(self,locator,timeout).until(EC.)
